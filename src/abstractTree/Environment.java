@@ -4,18 +4,23 @@ import java.util.Map;
 
 public class Environment implements EnvironmentInt {
 
+	private Map<String, Double> table;
+
+	public Environment() {
+		this.table = new HashMap<String, Double>();
+	}
+
 	@Override
-	public void putVariable(String var, Double value) {
-		// TODO Auto-generated method stub
-		
+	public void putVariable(String variable, Double value) {
+		table.put(variable, value);
+		System.out.println("Enregistre " + variable + " " + value);
 	}
 
 	@Override
 	public Double getVariableValue(String variable) {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println("Retrouve " + variable + " " + table.get(variable));
+		return table.get(variable);
 	}
 
-	// Implémenter la classe pour gérer un environnement
-	
+
 }
